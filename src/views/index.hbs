@@ -1,0 +1,54 @@
+<main>
+
+    {{#if user}}
+    <h2 class="saludo-bienvenida">Hola
+        {{this.user.first_name}}
+        {{this.user.last_name}}!</h2>
+
+
+    <div>
+
+        <li><a href="/api/session/current">Datos de la cuenta</a></li>
+        <li><a href="/cart/{{this.user.cart}}">Carrito</a></li>
+        <li><a href="/logout">Logout</a></li>
+
+    </div>
+    {{/if}}
+
+    <div>
+        <h1 class="title"> NUESTRAS TORTAS </h1>
+
+        <div class="pagination__container">
+            <div class="filters__container">
+                <h4>Filters:</h4>
+                <div>category</div>
+                <button class="pagination__button">most expensive</button>
+                <button class="pagination__button">less expensive</button>
+            </div>
+            <div class="pages__container">
+                <a href={{prevLink}}><button class="pagination__button">Anterior</button></a>
+                <a href={{nextLink}}><button class="pagination__button">Siguiente</button></a>
+            </div>
+        </div>
+
+        {{#each payload}}
+
+        <section class="products__container">
+            <div class="product__container">
+
+
+                <picture><img class="product_img" src={{this.thumbnail}} /></picture>
+                <h2>{{this.title}}</h2>
+                <p>{{this.description}}</p>
+                <p>${{this.price}}</p>
+
+                <a href="/product/{{this._id}}"><button>Ver descripción</button></a>
+
+                {{/each}}
+
+
+            </div>
+
+        </section>
+
+</main>

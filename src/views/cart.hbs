@@ -1,0 +1,50 @@
+<main>
+
+    <div>
+
+        <h1> CARRITO </h1>
+
+
+        {{#if products}}
+
+        {{#each products}}
+
+        <section class="section-carrito">
+            <div class="cards-carrito">
+
+
+
+                <h2>{{this.product.title}}</h2>
+                <img src={{this.product.thumbnail}} />
+                <p>${{this.product.price}}</p>
+                <p>x{{this.quantity}}</p>
+
+
+
+                <button class="cart__deleteBtn" id="cart__product--deleteBtn"
+                    value={{this.product._id}}>Eliminar</button>
+
+
+                {{/each}}
+
+                {{else}}
+                <h3>El carrito se encuentra vacio</h3>
+                {{/if}}
+
+
+                <form action="/cart/{{cid}}/purchase" method="post">
+
+                    <button type="submit" class="cart__total--btn" id="purchase__btn" value={{cid}}>Confirmar
+                        compra</button>
+
+                </form>
+
+
+
+
+
+            </div>
+
+</main>
+
+<script src="/js/cart.js"></script>

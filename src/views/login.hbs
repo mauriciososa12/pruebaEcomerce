@@ -1,0 +1,18 @@
+<main class="layout">
+    <div class="login__container">
+        <h2 class="login__title">Bienvenido/a a CasaTorta!</h2>
+        <p>Ingresa tus datos para continuar o si aún no estas registado <a href="/register">REGISTRATE</a>
+        </p>
+        <form action="/login" method="post" class="login__form">
+            <input type="text" placeholder="email" name="email" />
+            <input type="password" placeholder="password" name="password" />
+            <div class="input__divider"></div>
+            <button type="submit">Ingresar</button>
+
+            <p><a href="/login-github">Iniciar sesión con Github.</a></p>
+        </form>
+        <div>
+            <p>Olvidaste tu contraseña? <a href="/restore">RECUPERAR</a></p>
+        </div>
+    </div>
+</main>
